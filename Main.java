@@ -5,6 +5,8 @@ class Main {
     int menu = 0;
         Scanner input = new Scanner(System.in);
 
+        Cliente cliente = new Cliente();
+        
         while (menu != 4) {
             System.out.println("\nMenu Principal\n");
             System.out.println(" 1) Listar clientes\n");
@@ -17,7 +19,9 @@ class Main {
             switch (menu) {
             case 1:
                 // Aceita overbook!
-                System.out.print("case1 ");
+                cliente.display();
+                
+                System.out.print("Lista de clientes ");
                 break;
             case 2:
                 System.out.print("case2 ");
@@ -34,12 +38,9 @@ class Main {
                 break;
             }
         }
-    // Scanner teclado = new Scanner(System.in);
+    
 
-    // Cliente[] clientes = new Cliente[50];
-
-    // clientes[0] = new Cliente(1, "Carlos", "123", "234", "54323");
-    // clientes[1] = new Cliente(2, "Mateus", "123", "234", "54323");
+    
 
     // System.out.println("Teste: ");
 

@@ -1,5 +1,9 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 class Cliente {
-  int Id;
+  String Id;
   String nome;
   String cpf;
   String endereco;
@@ -8,7 +12,7 @@ class Cliente {
   Cliente() {
   }
 
-  Cliente(int i, String n, String c, String e, String t) {
+  Cliente(String i, String n, String c, String e, String t) {
     this.Id = i;
     this.nome = n;
     this.cpf = c;
@@ -17,9 +21,21 @@ class Cliente {
 
   }
 
+  @Override
+  public String toString() {
+    return "Nome: " + nome + " " + "CPF: " + cpf + " " + "Endereço: " + " " + endereco;
+  }
+
   public void display() {
-    System.out.println("Customer id is: " + nome + " "
-        + "and Customer name is: "
-        + nome);
+    Cliente carlos = new Cliente("4", "Carlos", "1234", "1234", "1234");
+    Cliente joao = new Cliente("4", "Joao", "1234", "1234", "1234");
+
+    ArrayList<Cliente> clientes = new ArrayList<>();
+
+    clientes.add(carlos);
+    clientes.add(joao);
+
+    clientes.forEach((cliente) -> System.out.println(cliente.toString()));
+
   }
 }
