@@ -3,7 +3,6 @@ import java.util.Collections;
 import java.util.Comparator;
 
 class Cliente {
-  String Id;
   String nome;
   String cpf;
   String endereco;
@@ -12,8 +11,7 @@ class Cliente {
   Cliente() {
   }
 
-  Cliente(String i, String n, String c, String e, String t) {
-    this.Id = i;
+  Cliente(String n, String c, String e, String t) {
     this.nome = n;
     this.cpf = c;
     this.endereco = e;
@@ -26,16 +24,16 @@ class Cliente {
     return "Nome: " + nome + " " + "CPF: " + cpf + " " + "Endereço: " + " " + endereco;
   }
 
-  public void display() {
-    Cliente carlos = new Cliente("4", "Carlos", "1234", "1234", "1234");
-    Cliente joao = new Cliente("4", "Joao", "1234", "1234", "1234");
+  // public void display() {
+  // Cliente carlos = new Cliente("Carlos", "1234", "1234", "1234");
+  // Cliente joao = new Cliente("Joao", "1234", "1234", "1234");
 
-    ArrayList<Cliente> clientes = new ArrayList<>();
+  // ArrayList<Cliente> clientesAntigos = new ArrayList<>();
 
-    clientes.add(carlos);
-    clientes.add(joao);
+  // clientesAntigos.add(carlos);
+  // clientesAntigos.add(joao);
 
-    clientes.forEach((cliente) -> System.out.println(cliente.toString()));
+  // clientesAntigos.forEach((cliente) -> System.out.println(cliente.toString()));
 
-  }
+  // }
 }
