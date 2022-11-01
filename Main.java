@@ -9,7 +9,7 @@ class Main {
 
     Cliente carlos = new Cliente("Carlos", "1234", "1234", "1234");
     Cliente joao = new Cliente("Joao", "1234", "1234", "1234");
-    Produto Whisky = new Produto("Jack daniels", "30%", "10/05/2022");
+    Produto Whisky = new Produto("Jack daniels", "30%", "10/05/2022", 120);
 
     ArrayList<Cliente> clientes = new ArrayList<>();
     ArrayList<Produto> produtos = new ArrayList<>();
@@ -59,8 +59,10 @@ class Main {
           String teorAlcoolico = input.next();
           System.out.println("Digite a validade do produto: ");
           String validade = input.next();
+          System.out.println("Digite o preço do produto: ");
+          double preco = input.nextDouble();
 
-          Produto NovoProduto = new Produto(produtoNome, teorAlcoolico, validade);
+          Produto NovoProduto = new Produto(produtoNome, teorAlcoolico, validade, preco);
           produtos.add(NovoProduto);
 
           break;
