@@ -10,25 +10,31 @@ class Main {
     Cliente carlos = new Cliente("Carlos", "1234", "1234", "1234");
     Cliente joao = new Cliente("Joao", "1234", "1234", "1234");
     Produto Whisky = new Produto("Jack daniels", "30%", "10/05/2022", 120);
+    Gerente Cesar = new Gerente("Cesar mennoti", 12345, 2000);
 
     ArrayList<Cliente> clientes = new ArrayList<>();
     ArrayList<Produto> produtos = new ArrayList<>();
+    ArrayList<Funcionario> funcionarios = new ArrayList<>();
 
     produtos.add(Whisky);
     clientes.add(carlos);
     clientes.add(joao);
+    funcionarios.add(Cesar);
 
     Cliente cliente = new Cliente();
 
-    while (menu != 7) {
+    while (menu != 10) {
       System.out.println("\nMenu Principal\n");
       System.out.println(" 1) Listar clientes\n");
       System.out.println(" 2) Cadastrar novo cliente\n");
       System.out.println(" 3) Cadastrar novo produto\n");
-      System.out.println(" 4) Remover clientes\n");
-      System.out.println(" 5) Remover Produtos\n");
-      System.out.println(" 6) Listar Produtos\n");
-      System.out.println(" 7) Sair\n");
+      System.out.println(" 4) Cadastrar novo funcionario\n");
+      System.out.println(" 5) Listar funcionarios\n");
+      System.out.println(" 6) Remover clientes\n");
+      System.out.println(" 7) Remover Produtos\n");
+      System.out.println(" 8) Remover funcionarios\n");
+      System.out.println(" 9) Listar Produtos\n");
+      System.out.println(" 10) Sair\n");
 
       menu = input.nextInt();
 
@@ -67,7 +73,7 @@ class Main {
 
           break;
 
-        case 4:
+        case 6:
 
           clientes.forEach((value) -> System.out.println(value.toString()));
 
@@ -78,7 +84,7 @@ class Main {
 
           break;
 
-        case 5:
+        case 7:
 
           produtos.forEach((value) -> System.out.println(value.toString()));
 
@@ -89,14 +95,50 @@ class Main {
 
           break;
 
-        case 6:
+        case 8:
+
+          funcionarios.forEach((value) -> value.imprimeDados());
+
+          System.out.println("Digite qual funcionario deseja remover: ");
+          int funcionario_para_remover = input.nextInt();
+
+          funcionarios.remove(funcionario_para_remover - 1);
+
+          break;
+
+        case 9:
           produtos.forEach((value) -> System.out.println(value.toString()));
 
           break;
 
-        case 7:
+        case 4:
+          System.out.println("Digite o nome do funcionario: ");
+          String NovoNome = input.next();
+          System.out.println("Digite a mátricula do funcionario: ");
+          int NovaMatricula = input.nextInt();
+          System.out.println("Digite o salario: ");
+          double NovoSalario = input.nextDouble();
+          System.out.println("Cargo: \n 1) Gerente \n 2) Vendedor");
+          int cargo = input.nextInt();
+
+          if(cargo == 1) {
+            
+            Gerente NovoGerente = new Gerente(NovoNome, NovaMatricula, NovoSalario);
+            funcionarios.add(NovoGerente);
+          } else if(cargo == 2) {
+            
+            Vendedor NovoVendedor = new Vendedor(NovoNome, NovaMatricula, NovoSalario, 0);
+            funcionarios.add(NovoVendedor);
+          }
+          break;
+
+        case 5:
+          funcionarios.forEach((value) -> value.imprimeDados());
+          break;
+
+        case 10:
           System.out.print("Programa encerrado");
-          menu = 7;
+          menu = 10;
           break;
 
         default:
