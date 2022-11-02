@@ -16,13 +16,13 @@ public class Gerente extends Funcionario {
   }
 
   @Override
-  public void imprimeDados() {
+  public void imprimeDados(int IdArray) {
     String nome = super.getNome();
     int matricula = super.getMatricula();
     this.calculaSalario();
     double salario = this.getSalario();
-    
-    System.out.println("Nome: " + nome + "\n" + "Matricula: " + matricula + "\n" + "Salario: " + salario);
+
+    System.out.println( "ID: "+ (IdArray +1) +"\nNome: " + nome + "\nMatricula: "+ matricula + "\nSalario: " + salario);
   }
 
   @Override

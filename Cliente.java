@@ -1,7 +1,3 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-
 class Cliente {
   String nome;
   String cpf;
@@ -19,21 +15,7 @@ class Cliente {
 
   }
 
-  @Override
-  public String toString() {
-    return "Nome: " + nome + " " + "CPF: " + cpf + " " + "Endereço: " + " " + endereco;
+  public String toString(int idArray) {
+    return "ID: " + (idArray + 1) + "\nNome: " + nome + " " + "\nCPF: " + cpf + " " + "\nEndereço: " + " " + endereco;
   }
-
-  // public void display() {
-  // Cliente carlos = new Cliente("Carlos", "1234", "1234", "1234");
-  // Cliente joao = new Cliente("Joao", "1234", "1234", "1234");
-
-  // ArrayList<Cliente> clientesAntigos = new ArrayList<>();
-
-  // clientesAntigos.add(carlos);
-  // clientesAntigos.add(joao);
-
-  // clientesAntigos.forEach((cliente) -> System.out.println(cliente.toString()));
-
-  // }
 }

@@ -26,12 +26,12 @@ public class Vendedor extends Funcionario {
   }
 
   @Override
-  public void imprimeDados() {
+  public void imprimeDados(int IdArray) {
     String nome = super.getNome();
     int matricula = super.getMatricula();
     double salario = super.getSalarioBase();
-    
-    System.out.println("Nome: " + nome + "\n" + "Matricula: "+ "\n" + matricula + "\n" +"Salario: " + salario);
+
+    System.out.println( "ID: "+ (IdArray +1) +"\nNome: " + nome + "\nMatricula: "+ matricula + "\nSalario: " + salario);
   }
 
   @Override

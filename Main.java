@@ -37,53 +37,56 @@ class Main {
       menu = input.nextInt();
 
       switch (menu) {
-        case 1 -> clientes.forEach((value) -> System.out.println(value.toString()));
+        case 1 -> clientes.forEach((value) -> System.out.println(value.toString(clientes.indexOf(value))));
         case 2 -> {
-          System.out.println("Digite seu nome: ");
-          String nome = input.next();
+          String sacrificio = input.nextLine();
+          System.out.println("Digite seu nome e sobrenome: ");
+          String nome = input.nextLine();
           System.out.println("Digite seu cpf: ");
-          String cpf = input.next();
+          String cpf = input.nextLine();
           System.out.println("Digite seu telefone: ");
-          String telefone = input.next();
+          String telefone = input.nextLine();
           System.out.println("Digite seu endereço: ");
-          String endereco = input.next();
+          String endereco = input.nextLine();
           Cliente NovoCliente = new Cliente(nome, cpf, telefone, endereco);
           clientes.add(NovoCliente);
         }
         case 3 -> {
+          String sacrificio = input.nextLine();
           System.out.println("Digite o nome do produto: ");
-          String produtoNome = input.next();
+          String produtoNome = input.nextLine();
           System.out.println("Digite o teor alcolico do produto: ");
-          String teorAlcoolico = input.next();
+          String teorAlcoolico = input.nextLine();
           System.out.println("Digite a validade do produto: ");
-          String validade = input.next();
+          String validade = input.nextLine();
           System.out.println("Digite o preço do produto: ");
           double preco = input.nextDouble();
           Produto NovoProduto = new Produto(produtoNome, teorAlcoolico, validade, preco);
           produtos.add(NovoProduto);
         }
         case 6 -> {
-          clientes.forEach((value) -> System.out.println(value.toString()));
-          System.out.println("Digite qual cliente deseja remover: ");
+          clientes.forEach((value) -> System.out.println(value.toString(clientes.indexOf(value))));
+          System.out.println("Digite qual cliente (ID) deseja remover: ");
           int cliente_para_remover = input.nextInt();
           clientes.remove(cliente_para_remover - 1);
         }
         case 7 -> {
-          produtos.forEach((value) -> System.out.println(value.toString()));
-          System.out.println("Digite qual produto deseja remover: ");
+          produtos.forEach((value) -> System.out.println(value.toString(produtos.indexOf(value))));
+          System.out.println("Digite qual produto (ID) deseja remover: ");
           int produto_para_remover = input.nextInt();
           produtos.remove(produto_para_remover - 1);
         }
         case 8 -> {
-          funcionarios.forEach(Funcionario::imprimeDados);
-          System.out.println("Digite qual funcionario deseja remover: ");
+          funcionarios.forEach((value) -> value.imprimeDados(funcionarios.indexOf(value)));
+          System.out.println("Digite qual funcionario (ID) deseja remover: ");
           int funcionario_para_remover = input.nextInt();
           funcionarios.remove(funcionario_para_remover - 1);
         }
-        case 9 -> produtos.forEach((value) -> System.out.println(value.toString()));
+        case 9 -> produtos.forEach((value) -> System.out.println(value.toString(produtos.indexOf(value))));
         case 4 -> {
+          String sacrificio = input.nextLine();
           System.out.println("Digite o nome do funcionario: ");
-          String NovoNome = input.next();
+          String NovoNome = input.nextLine();
           System.out.println("Digite a mátricula do funcionario: ");
           int NovaMatricula = input.nextInt();
           System.out.println("Digite o salario: ");
@@ -100,7 +103,7 @@ class Main {
             funcionarios.add(NovoVendedor);
           }
         }
-        case 5 -> funcionarios.forEach(Funcionario::imprimeDados);
+        case 5 -> funcionarios.forEach((value) -> value.imprimeDados(funcionarios.indexOf(value)));
         case 10 -> System.out.print("Programa encerrado");
         default -> System.out.println("default ");
       }

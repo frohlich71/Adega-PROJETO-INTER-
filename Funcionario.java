@@ -35,5 +35,5 @@ public abstract class Funcionario {
 
   public abstract void calculaSalario();
 
-  public abstract void imprimeDados();
+  public abstract void imprimeDados(int IdArray);
 }
